@@ -12,12 +12,12 @@ import { currentRound, injuries, ladder, oddsData } from './data/round-data';
 import { tippingHistory, tippingStats, roundAnalyses } from './data/tips-data';
 
 export default function Home() {
-  // Find close games (margin < 4 points - stricter threshold)
+  // Find really close games (margin < 2.5 points - very strict threshold)
   const closeGames = currentRound.filter(game => {
     const gameOdds = oddsData.find(o => o.gameId === game.id);
     if (!gameOdds) return false;
     const margin = Math.abs(gameOdds.homeOdds - gameOdds.awayOdds);
-    return margin < 4;
+    return margin < 2.5;
   });
 
   return (
