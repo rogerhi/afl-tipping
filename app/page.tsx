@@ -6,16 +6,18 @@ import OddsComparison from './components/OddsComparison';
 import CloseGamesAlert from './components/CloseGamesAlert';
 import TippingHistory from './components/TippingHistory';
 import RoundLessons from './components/RoundLessons';
+import StrategyGuide from './components/StrategyGuide';
+import EloRatings from './components/EloRatings';
 import { currentRound, injuries, ladder, oddsData } from './data/round-data';
 import { tippingHistory, tippingStats, roundAnalyses } from './data/tips-data';
 
 export default function Home() {
-  // Find close games (margin < 6 points)
+  // Find close games (margin < 4 points - stricter threshold)
   const closeGames = currentRound.filter(game => {
     const gameOdds = oddsData.find(o => o.gameId === game.id);
     if (!gameOdds) return false;
     const margin = Math.abs(gameOdds.homeOdds - gameOdds.awayOdds);
-    return margin < 6;
+    return margin < 4;
   });
 
   return (
@@ -49,16 +51,16 @@ export default function Home() {
         {/* Close Games Alert */}
         <CloseGamesAlert games={closeGames} oddsData={oddsData} />
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-          {/* This Week's Games - Takes up 2 columns */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold flex items-center gap-2">
-                <span className="text-2xl">📅</span>
+        {/* Main Grid - Mobile responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8 mt-6 md:mt-8">
+          {/* This Week's Games - Full width on mobile */}
+          <div className="lg:col-span-2 space-y-4 md:space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">📅</span>
                 This Week's Games
               </h2>
-              <span className="text-sm text-gray-400">{currentRound.length} matches</span>
+              <span className="text-xs sm:text-sm text-gray-400">{currentRound.length} matches</span>
             </div>
             
             <div className="grid gap-4">
@@ -101,6 +103,9 @@ export default function Home() {
 
           {/* Sidebar - Ladder & Injuries */}
           <div className="space-y-6">
+            {/* ELO Ratings */}
+            <EloRatings />
+
             {/* Ladder */}
             <div className="bg-gray-800/50 rounded-xl border border-white/10 overflow-hidden">
               <div className="p-4 border-b border-white/10 bg-gradient-to-r from-blue-500/20 to-transparent">
@@ -120,6 +125,9 @@ export default function Home() {
               </div>
               <InjuryReport injuries={injuries} />
             </div>
+
+            {/* Strategy Guide */}
+            <StrategyGuide />
 
             {/* Quick Tips */}
             <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-xl border border-yellow-500/20 p-6">
