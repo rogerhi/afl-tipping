@@ -12,13 +12,17 @@ import { currentRound, injuries, ladder, oddsData } from './data/round-data';
 import { tippingHistory, tippingStats, roundAnalyses } from './data/tips-data';
 
 export default function Home() {
-  // Find really close games (margin < 2.5 points - very strict threshold)
-  const closeGames = currentRound.filter(game => {
-    const gameOdds = oddsData.find(o => o.gameId === game.id);
-    if (!gameOdds) return false;
-    const margin = Math.abs(gameOdds.homeOdds - gameOdds.awayOdds);
-    return margin < 2.5;
-  });
+  // Find TOP 2 closest games (show only the 2 tightest matchups)
+  const closeGames = currentRound
+    .map(game => {
+      const gameOdds = oddsData.find(o => o.gameId === game.id);
+      const margin = gameOdds ? Math.abs(gameOdds.homeOdds - gameOdds.awayOdds) : 999;
+      return { game, margin };
+    })
+    .sort((a, b) => a.margin - b.margin) // Sort by closeness
+    .slice(0, 2) // Take only top 2
+    .filter(item => item.margin < 8) // Only show if margin is reasonably close
+    .map(item => item.game);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">

@@ -35,7 +35,7 @@ export default function CloseGamesAlert({ games, oddsData }: CloseGamesAlertProp
             THE 20% THAT DECIDES YOUR TIPPING COMP
           </h2>
           <p className="text-xs md:text-sm text-gray-300 mt-1">
-            <span className="font-bold text-yellow-400">80/20 Rule:</span> Winners are decided by these <span className="text-red-400 font-bold">{games.length} close game{games.length > 1 ? 's' : ''}</span>.
+            <span className="font-bold text-yellow-400">TOP 2 rule:</span> Focus only on the <span className="text-red-400 font-bold">{games.length} tightest{games.length === 1 ? '' : ''} game{games.length === 1 ? '' : ''}</span>.
           </p>
         </div>
       </div>
