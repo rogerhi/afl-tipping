@@ -108,6 +108,15 @@ export const currentRound: Game[] = [
 export const injuries: Injury[] = [
   {
     id: "1",
+    player: "Ivan Soldo",
+    team: "Port Adelaide",
+    injury: "ACL",
+    status: "Season",
+    returnDate: "2027",
+    importance: "High"
+  },
+  {
+    id: "2",
     player: "Check Thursday 6pm",
     team: "All Teams",
     injury: "Teamsheets",
