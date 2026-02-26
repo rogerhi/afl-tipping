@@ -117,12 +117,21 @@ export const injuries: Injury[] = [
   },
   {
     id: "2",
-    player: "Check Thursday 6pm",
-    team: "All Teams",
-    injury: "Teamsheets",
-    status: "Test",
+    player: "Jake Kolodjashnij",
+    team: "Geelong Cats",
+    injury: "Hip",
+    status: "Return",
     returnDate: "Round 1",
     importance: "Medium"
+  },
+  {
+    id: "3",
+    player: "Teamsheets Pending",
+    team: "All Teams",
+    injury: "6pm Release",
+    status: "Check",
+    returnDate: "Round 1",
+    importance: "High"
   }
 ];
 
