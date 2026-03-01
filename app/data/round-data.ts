@@ -1,7 +1,7 @@
 import { Game, Injury, LadderTeam, Odds } from '../types';
 
 // Round 1, 2026
-// Last updated: 09/02/2026, 6:00:05 am
+// Last updated: 02/03/2026, 6:00:07 am
 
 export const currentRound: Game[] = [
   {
@@ -108,30 +108,12 @@ export const currentRound: Game[] = [
 export const injuries: Injury[] = [
   {
     id: "1",
-    player: "Ivan Soldo",
-    team: "Port Adelaide",
-    injury: "ACL",
-    status: "Season",
-    returnDate: "2027",
-    importance: "High"
-  },
-  {
-    id: "2",
-    player: "Jake Kolodjashnij",
-    team: "Geelong Cats",
-    injury: "Hip",
-    status: "Return",
+    player: "Check Thursday 6pm",
+    team: "All Teams",
+    injury: "Teamsheets",
+    status: "Test",
     returnDate: "Round 1",
     importance: "Medium"
-  },
-  {
-    id: "3",
-    player: "Teamsheets Pending",
-    team: "All Teams",
-    injury: "6pm Release",
-    status: "Check",
-    returnDate: "Round 1",
-    importance: "High"
   }
 ];
 
@@ -145,9 +127,9 @@ export const oddsData: Odds[] = [
     gameId: "R1G1",
     homeOdds: 1.8,
     awayOdds: 2,
-    homeLine: -2,
-    awayLine: 2,
-    margin: 4.351049812831843,
+    homeLine: -1,
+    awayLine: 1,
+    margin: 2.596706015932481,
     bookie: "Sportsbet",
     confidence: "Low"
   },
@@ -155,39 +137,39 @@ export const oddsData: Odds[] = [
     gameId: "R1G2",
     homeOdds: 1.45,
     awayOdds: 2.8,
-    homeLine: -5,
-    awayLine: 5,
-    margin: 10.934558742715646,
+    homeLine: -8,
+    awayLine: 8,
+    margin: 15.793249938070057,
     bookie: "Ladbrokes",
-    confidence: "Medium"
+    confidence: "High"
   },
   {
     gameId: "R1G3",
     homeOdds: 1.45,
     awayOdds: 2.8,
-    homeLine: -9,
-    awayLine: 9,
-    margin: 18.31180975062056,
+    homeLine: -12,
+    awayLine: 12,
+    margin: 24.50793742140145,
     bookie: "TAB",
     confidence: "High"
   },
   {
     gameId: "R1G4",
-    homeOdds: 1.45,
-    awayOdds: 2.8,
-    homeLine: -15,
-    awayLine: 15,
-    margin: 29.883003681616437,
+    homeOdds: 1.8,
+    awayOdds: 2,
+    homeLine: -3,
+    awayLine: 3,
+    margin: 5.836994258984038,
     bookie: "Sportsbet",
-    confidence: "High"
+    confidence: "Low"
   },
   {
     gameId: "R1G5",
     homeOdds: 1.45,
     awayOdds: 2.8,
-    homeLine: -8,
-    awayLine: 8,
-    margin: 16.257967375130352,
+    homeLine: -10,
+    awayLine: 10,
+    margin: 19.699408149892843,
     bookie: "Ladbrokes",
     confidence: "High"
   },
@@ -197,7 +179,7 @@ export const oddsData: Odds[] = [
     awayOdds: 2.8,
     homeLine: -7,
     awayLine: 7,
-    margin: 13.044241687000905,
+    margin: 14.193992761717865,
     bookie: "TAB",
     confidence: "Medium"
   },
@@ -205,30 +187,30 @@ export const oddsData: Odds[] = [
     gameId: "R1G7",
     homeOdds: 1.45,
     awayOdds: 2.8,
-    homeLine: -6,
-    awayLine: 6,
-    margin: 12.44902892328414,
+    homeLine: -11,
+    awayLine: 11,
+    margin: 22.245192358770385,
     bookie: "Sportsbet",
-    confidence: "Medium"
+    confidence: "High"
   },
   {
     gameId: "R1G8",
     homeOdds: 1.45,
     awayOdds: 2.8,
-    homeLine: -15,
-    awayLine: 15,
-    margin: 29.712367822382433,
+    homeLine: -11,
+    awayLine: 11,
+    margin: 22.350009869118857,
     bookie: "Ladbrokes",
     confidence: "High"
   },
   {
     gameId: "R1G9",
-    homeOdds: 1.45,
-    awayOdds: 2.8,
-    homeLine: -10,
-    awayLine: 10,
-    margin: 20.663342956627382,
+    homeOdds: 1.8,
+    awayOdds: 2,
+    homeLine: -3,
+    awayLine: 3,
+    margin: 5.645815409126222,
     bookie: "TAB",
-    confidence: "High"
+    confidence: "Low"
   }
 ];
